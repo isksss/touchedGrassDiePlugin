@@ -1,0 +1,4 @@
+name: touchedGrassDiePlugin
+version: '${version}'
+main: dev.isksss.mc.touchedgrassdieplugin.TouchedGrassDiePlugin
+api-version: 1.19
