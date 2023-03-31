@@ -1,9 +1,3 @@
-# gradleのビルドテストを行う
-# このファイルはGitHub Actionsの設定ファイルです。
-# このファイルをGitHubにpushすると、GitHub Actionsが自動でビルドテストを行います。
-# masterブランチにpushすると、ビルドテストが行われます。
-# javaバージョンは1.17です。
-
 name: BuildTest
 
 on:
