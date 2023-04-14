@@ -49,7 +49,10 @@ public final class TouchedGrassDiePlugin extends JavaPlugin implements Listener 
                 material == Material.COARSE_DIRT ||
                 material == Material.MYCELIUM ||
                 material == Material.FARMLAND ||
-                material == Material.DIRT
+                material == Material.DIRT ||
+                material == Material.SOUL_SAND ||
+                material == Material.CRIMSON_NYLIUM ||
+                material == Material.WARPED_NYLIUM
         ) {
             player.setKiller(player);
             World world = e.getTo().getWorld();
