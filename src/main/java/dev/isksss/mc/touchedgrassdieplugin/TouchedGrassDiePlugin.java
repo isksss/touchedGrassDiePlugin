@@ -43,7 +43,7 @@ public final class TouchedGrassDiePlugin extends JavaPlugin implements Listener 
         Material material = block.getBlockData().getMaterial();
 
         //todo: 草ブロックにふれたプレイヤーをキル
-        if (material == Material.GRASS_BLOCK || material == Material.GRASS) {
+        if (material == Material.GRASS_BLOCK || material == Material.GRASS || material == Material.DIRT_PATH || material == Material.PODZOL || material == Material.COARSE_DIRT || material == Material.MYCELIUM || material == Material.FARMLAND || material == Material.DIRT) {
             player.setKiller(player);
             World world = e.getTo().getWorld();
             String msg = player.getName() + "は草ブロックを踏んでしまった！！";
