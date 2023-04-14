@@ -37,8 +37,7 @@ public final class TouchedGrassDiePlugin extends JavaPlugin implements Listener 
         double blockLocY =playerLoc.getY() - 1;
         double blockLocZ =playerLoc.getZ();
 
-        Location blockLoc = null;
-        blockLoc.set(blockLocX,blockLocY,blockLocZ);
+        Location blockLoc = playerLoc.set(blockLocX,blockLocY,blockLocZ);
 
         Block block = blockLoc.getBlock();
         Material material = block.getBlockData().getMaterial();
