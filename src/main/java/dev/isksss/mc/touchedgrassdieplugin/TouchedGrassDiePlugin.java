@@ -34,7 +34,7 @@ public final class TouchedGrassDiePlugin extends JavaPlugin implements Listener 
 
         //一個下のブロック
         double blockLocX =playerLoc.getX();
-        double blockLocY =playerLoc.getY() - 1;
+        double blockLocY =playerLoc.getY() - 0.5;
         double blockLocZ =playerLoc.getZ();
 
         Location blockLoc = playerLoc.set(blockLocX,blockLocY,blockLocZ);
@@ -42,14 +42,23 @@ public final class TouchedGrassDiePlugin extends JavaPlugin implements Listener 
         Block block = blockLoc.getBlock();
         Material material = block.getBlockData().getMaterial();
 
-        //todo: 草ブロックにふれたプレイヤーをキル
-        if (material == Material.GRASS_BLOCK || material == Material.GRASS || material == Material.DIRT_PATH || material == Material.PODZOL || material == Material.COARSE_DIRT || material == Material.MYCELIUM || material == Material.FARMLAND || material == Material.DIRT) {
+        if (    material == Material.GRASS_BLOCK ||
+                material == Material.GRASS ||
+                material == Material.DIRT_PATH ||
+                material == Material.PODZOL ||
+                material == Material.COARSE_DIRT ||
+                material == Material.MYCELIUM ||
+                material == Material.FARMLAND ||
+                material == Material.DIRT
+        ) {
             player.setKiller(player);
             World world = e.getTo().getWorld();
-            String msg = player.getName() + "は草ブロックを踏んでしまった！！";
+
+            String msg = player.getName() + "は"+ material +"を踏んでしまった！！";
 
             world.getPlayers().forEach(p -> p.sendMessage(msg));
             player.setHealth(0);
+
             e.setCancelled(true);
         }
     }
